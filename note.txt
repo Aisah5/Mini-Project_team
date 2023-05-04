@@ -1,0 +1,17 @@
+name: DataTypes.STRING,
+    image: DataTypes.STRING,
+    url: DataTypes.STRING,
+    id_category: DataTypes.INTEGER,
+    price: DataTypes.DOUBLE,
+    decription: DataTypes.TEXT
+
+
+
+const Product = db.define('product', {
+    name: DataTypes.STRING,
+    image: DataTypes.STRING,
+    url: DataTypes.STRING,
+    
+},{
+    freezetableName:true
+})
