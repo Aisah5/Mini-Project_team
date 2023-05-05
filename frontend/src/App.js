@@ -3,13 +3,15 @@ import React from 'react';
 import Login from './auth/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Signup from './auth/Signup';
-import Home from './component/Home';
+import Home from './pages/Home';
+// import Navigationbar from './pages/Navigationbar';
 import Dashboard from './component/Dashboard';
 import Category from './component/category/Category';
 import EditCategory from './component/category/EditCategory';
 import Product from './component/product/Product';
 import AddProduct from './component/product/AddProduct';
 import Report from './component/Report';
+
 
 
 function App() {

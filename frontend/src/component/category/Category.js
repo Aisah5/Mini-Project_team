@@ -12,7 +12,6 @@ function Category() {
   const navigate = useNavigate();
 
 
-
   useEffect(() => {
     getCategory();
   }, []);
@@ -69,7 +68,7 @@ function Category() {
             <div className="card-body">
               <h4 className="card-title">Form Data Kategori</h4>
               {/* <p className="card-description"> Basic form layout </p> */}
-              <form onSubmit={saveCategory } className="forms-sample">
+              <form onSubmit={saveCategory} className="forms-sample">
                 <Form.Group>
                   <label className='label'>Name</label>
                   {/* <input 

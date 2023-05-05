@@ -1,0 +1,97 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+
+
+function Home() {
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  const getProducts = async () => {
+    const response = await axios.get("http://localhost:3001/product");
+    setProducts(response.data);
+  };
+
+  // const deleteProduct = async (productId) => {
+  //   try {
+  //     await axios.delete(`http://localhost:3001/product/${id}`);
+  //     getProducts();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+
+  return (
+    <div>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
+      {/* <div class="form-inline mr-sm-2">
+            <button type="button" class="btn btn-light mr-auto">Dashboard</button>
+          </div> */}
+      
+
+        {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button> */}
+
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
+          <li className="nav-item active">
+            <a className="navbar-brand " href="#"></a>
+          </li>
+            <li className="nav-item active">
+              <a className="navbar-brand" href="#">KASIR <span class="sr-only">App</span></a>
+            </li>
+          </ul>
+          
+          <div class="form-inline mr-sm-2">
+            <Link to="/dashboard" className='btn btn-light w-100'>Dashboard website</Link>
+            {/* <button type="button" class="btn btn-light">Dashboard</button> */}
+          </div>
+        </div>
+      </nav>
+
+      <div className="container mt-5">
+      <div className="columns is-multiline mt-2">
+        {products.map((product) => (
+          <div className="column is-one-quarter" key={product.id}>
+            <div className="card">
+              <div className="card-image">
+                <figure className="image is-4by3">
+                  <img src={product.url} alt="Image" />
+                </figure>
+              </div>
+              <div className="card-content">
+                <div className="media">
+                  <div className="media-content">
+                    <p className="title is-4">{product.name}</p>
+                  </div>
+                </div>
+              </div>
+
+              <footer className="card-footer">
+                <Link to={`edit/${product.id}`} className="card-footer-item">
+                  Edit
+                </Link>
+                {/* <a
+                  onClick={() => deleteProduct(product.id)}
+                  className="card-footer-item"
+                >
+                  Delete
+                </a> */}
+              </footer>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    </div>
+    
+  );
+}
+
+export default Home;

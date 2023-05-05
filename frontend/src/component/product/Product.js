@@ -7,17 +7,23 @@ import { ProgressBar } from 'react-bootstrap';
 
 
 function Product() {
-  const [products, setProducts] = useState([]);
+  const [product, setProducts] = useState([]);
+  // const [name, setName] = useState([]);
+  // const [image, setImage] = useState([]);
+  // const [price, setPrice] = useState([]);
+  // const [id_category, setId_category] = useState([]);
+  // const [description, setDescription] = useState([]);
+  // const navigate = useNavigate();
 
   useEffect(()=>{
       getProducts();
   },[]);
 
   const getProducts = async () => {
-      const response = await axios.get("//localhost:3001/product");
-      getProducts(Response.data);
-  };
-
+      const response = await axios.get("http://localhost:3001/product");
+      setProducts(response.data);
+  }
+  
 
   return (
     <div className='d-flex'>
@@ -41,48 +47,33 @@ function Product() {
             <div className="card-body">
               <h4 className="card-title">Tabel Data Produk</h4>
               <Link to="./addProduct" className='button is-small btn btn-success'> Tambah </Link>
+              <p></p>
               <div className="table-responsive">
                 <table className="table table-striped">
                   <thead>
-                    <tr>
+                    <tr style={{ backgroundColor: 'grey' }}>
                       <th> No </th>
-                      <th>  </th> <th>  </th>
-                      <th> Gambar </th>
-                      <th>  </th> <th>  </th>
+                      <th style={{ textAlign: 'center' }}> Gambar </th>
                       <th> nama </th>
-                      <th> </th> <th>  </th>
                       <th> Kategori </th>
-                      <th>  </th> <th>  </th>
                       <th> Harga </th>
-                      <th>  </th> <th>  </th>
-                      <th> Deskripsi </th>
-                      <th>  </th> <th>  </th>
+                      <th style={{ textAlign: 'center' }}> Deskripsi </th>
                       <th> Action </th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td> 1</td>
-                      <td> </td> 
-                      <td> </td> 
-                      <td className="py-1">
-                        <img src={require("../../assets/images/faces/face1.jpg")} alt="user icon" />
+                  {product.map((product, index) => (
+                    <tr key={product.id}>
+                      <td> {index + 1} </td>
+                      <td className=' py-1' alt="image">
+                        <img src={product.url} style={{ width: '8rem' }} alt="Image" />
                       </td>
-                      <td> </td> 
-                      <td> </td> 
-                      <td> Herman Beck </td>
-                      <td> </td> 
-                      <td> </td> 
-                      <td>
-                      Herman Beck 
+                      <td> {product.name} </td>
+                      <td style={{ textAlign: 'center' }}>
+                      {product.id_category} 
                       </td>
-                      <td> </td> 
-                      <td> </td> 
-                      <td> $ 77.99 </td>
-                      <td> </td> 
-                      <td> </td> 
-                      <td> May 15, 2015 </td>
-                      <td> </td> <td> </td>
+                      <td> {product.price} </td>
+                      <td> {product.description}</td>
                       <td>
                         
                         <Link type="button" 
@@ -90,7 +81,7 @@ function Product() {
                         <button className='button is-small btn btn-danger'>Delete</button>
                         </td>
                     </tr>
- 
+                    ))}
                   </tbody>
                 </table>
               </div>

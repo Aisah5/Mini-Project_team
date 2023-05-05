@@ -21,15 +21,15 @@ function Sidebar() {
         <li className='nav-item py-1'>
             <a href='/home' className='nav-link text-white'>
                 <i className='bi bi-house me-3 fs-5'></i>
-                <span className='fs-5'>HOME Page</span>
+                <span className='fs-5'>HOME PAGE</span>
             </a>
         </li>
-        <li className='nav-item py-2'>
+        {/* <li className='nav-item py-2'>
             <a href='/dashboard' className='nav-link text-white'>
                 <i className='bi bi-speedometer me-3 fs-5'></i>
                 <span className='fs-5'>Dashboard</span>
             </a>
-        </li>
+        </li> */}
         <li className='nav-item py-2'>
             <a href='/product' className='nav-link text-white'>
                 <i className='bi bi-archive me-3 fs-5'></i>
