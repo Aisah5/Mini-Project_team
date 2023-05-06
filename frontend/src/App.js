@@ -4,7 +4,7 @@ import Login from './auth/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Signup from './auth/Signup';
 import Home from './pages/Home';
-// import Navigationbar from './pages/Navigationbar';
+import ProductView from './pages/ProductView';
 import Dashboard from './component/Dashboard';
 import Category from './component/category/Category';
 import EditCategory from './component/category/EditCategory';
@@ -21,6 +21,7 @@ function App() {
         <Route path='/' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/home' element={<Home />}></Route>
+        <Route path='/home/view/:id' element={<ProductView />}></Route>
         <Route path='/dashboard' element={<Dashboard />}></Route>
         <Route path='/category' element={<Category />}></Route>
         <Route path='category/:id' element={<EditCategory />}></Route>

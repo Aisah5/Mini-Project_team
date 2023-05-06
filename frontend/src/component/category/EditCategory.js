@@ -60,12 +60,8 @@ function EditCategory() {
               <form onSubmit={ updateCategory } className="forms-sample">
                 <Form.Group>
                   <label className='label'>Name</label>
-                  {/* <input 
-                  type='text'
-                  className='input'
-                  value={name}
-                  onChange={(e)=> setName(e.target.value)}
-                  placeholder='Name'
+                  {/* <input type='text' className='input' value={name}
+                    onChange={(e)=> setName(e.target.value)} placeholder='Name'
                   /> */}
                   <Form.Control type="text" className='input'
                   value={name} size="md" 
