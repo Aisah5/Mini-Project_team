@@ -49,9 +49,9 @@ function Home() {
         <Navigationbar/>
       </div>
       
-        {/* to={`./${category.id}`} */}
+        <br/><br/>
       
-      <Row xs={11} md={5} className="g-2 justify-content-center">
+      <Row xs={4} md={5} className="g-2justify-content-center">
         {products.map((product) => (
         <Col key={product.id}>
           <Card style={{ width: '15rem' }}>
@@ -80,3 +80,5 @@ function Home() {
 }
 
 export default Home;
+
+

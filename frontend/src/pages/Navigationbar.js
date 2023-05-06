@@ -20,19 +20,20 @@ const Navigationbar = () => {
           <a className="navbar-brand " href="#"></a>
         </li>
           <li className="nav-item active">
-            <a className="navbar-brand" href="#">KASIR <span class="sr-only">App</span></a>
+            <a className="navbar-brand" href="/product">KASIR <span class="sr-only">App</span></a>
           </li>
         </ul>
         
         <div class="form-inline mr-sm-2">
           {/* <Link to="/dashboard" className='btn btn-light w-100'>Dashboard website</Link> */}
           {/* <button type="button" class="btn btn-light">Dashboard</button> */}
-          <Link to="" className='btn btn-dark w-10 justify-content-right'>
-          <h3 className="bi bi-cart4"><span className="badge">4</span></h3>
-          </Link>
+          
           
         </div>
       </div>
+      <Link to="" className='btn btn-dark w-10 justify-content-right'>
+          <h3 className="bi bi-cart4"><span className="badge">4</span></h3>
+          </Link>
     </nav>
   );
 };
