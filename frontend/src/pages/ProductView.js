@@ -68,8 +68,7 @@ function ProductView() {
         <Card.Text>
         {description}
         </Card.Text>
-        <Button href="/home" variant="secondary">Kembali</Button>
-        <Button href="" variant="success">Buy</Button>
+      
         
       </Card.Body>
       <Button href="/home" variant="secondary">Kembali</Button>
@@ -78,26 +77,6 @@ function ProductView() {
       
     </CardGroup>
 
-
-      {/* <Container>
-        <p><p></p></p><a></a>
-      <Row xs={11} md={2} className="g-2 w-25 justify-content-center">
-        
-        <Col key={product.id}>
-        {preview ? (
-          <Card style={{ width: '25rem' }}>
-            <Card.Img variant="top" src={preview} alt="Preview Image" />
-          </Card>
-          ) : (
-            ""
-        )}
-        
-        </Col>
-        <Card style={{ width: '18rem' }}>
-      
-    </Card>
-    </Row>
-    </Container> */}
     </div>
   );
 }

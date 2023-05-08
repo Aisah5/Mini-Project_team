@@ -9,7 +9,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 function Sidebar() {
   return (
-    <div className='sidebar d-flix flex-column justify-content-space-between bg-dark text-white p-4 vh-100'>
+    <div className='sidebar d-flex flex-column justify-content-space-between bg-dark col-auto text-white p-4 vh-100'>
       <div>
       <h1>KasirApp</h1>
       {/* <a href="d-flex align-items-center">
@@ -58,19 +58,7 @@ function Sidebar() {
         </ul>
       </div>
       <div>
-        {/* <ul className='nav nav-pills flex-column px-0'>
-          
-          <li className='nav-item py-22'>
-            <hr className='text-secondary'/>
-              <a href='/login' className='nav-link text-white'>
-                <i className='bi bi-arrow-bar-left me-3 fs-5'></i>
-                <span className='fs-5'>Logout</span>
-              </a>
-          </li>
-        </ul> */}
-        {/* <hr className='text-secondary'/>
-        <i className='bi bi-arrow-bar-left fs-5'></i>
-        <span className='fs-5'>Logout</span> */}
+  
       </div>
     </div>
   );

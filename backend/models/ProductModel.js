@@ -1,5 +1,6 @@
-import { Sequelize } from"sequelize";
+import { Sequelize } from "sequelize";
 import db from "../config/Database.js";
+import Category from "./CategoryModel.js"
 
 
 const{DataTypes} = Sequelize;
@@ -14,6 +15,11 @@ const Product = db.define('product', {
 }, {
     freezeTableName: true
 });
+
+// // memiliki
+// Product.hasOne(Category, {foreignKey: 'id'})
+// // milik
+// Product.belongsTo(Category, {foreignKey: 'id'})
 
 export default Product;
 

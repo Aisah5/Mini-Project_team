@@ -1,1 +1,6 @@
-http://localhost:3001/product
+GET http://localhost:3001/idcategory
+
+
+###
+
+GET http://localhost:3001/product

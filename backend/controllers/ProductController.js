@@ -1,7 +1,9 @@
 import Product from "../models/ProductModel.js";
+import Category from "../models/CategoryModel.js";
 
 import path from "path";
 import fs from "fs";
+import db from "../config/Database.js";
 
 export const getProducts = async(req, res)=>{
     try {
@@ -11,6 +13,32 @@ export const getProducts = async(req, res)=>{
         console.log(error.message);
     }
 }
+
+// export const getProducts = async(req, res) => {
+//     try {
+//         const response = await Product.findAll({
+//             // attributes:['name'],
+//             where:{
+//                 id : req.params.id
+//             }
+//         });
+//         res.status(200).json(response);
+//     } catch (error) {
+//         console.log(error.message);
+//     }
+// }
+
+// export const getProducts = async(req, res)=>{
+//     try {
+//         const response = await db.query(
+//             // 'SELECT product.id as id, product.name as name, product.image as image, product.url as url, product.id_category as id_category, product.price as price, product.description as description FROM product INNER JOIN categories USING id_category')
+//             'SELECT * FROM product JOIN categories ON product.id_category = categories.id')
+//              //'Select product.id as id, product.name as name, product.image as image, product.url as url, product.id_category as id_category, product.price as price, product.description as description FROM PRODUCT JOIN categories ON product.id_category = categories.id')
+//         res.status(200).json(response);
+//     } catch (error) {
+//         console.log(error.message);
+//     }
+// }
 
 
 export const getProductById = async(req, res)=>{
@@ -26,6 +54,20 @@ export const getProductById = async(req, res)=>{
     }
 }
 
+
+export const getIdcategory = async(req, res) => {
+    try {
+        const response = await Category.findOne({
+            // attributes:['name'],
+            where:{
+                id: req.params.id_category
+            }
+        });
+        res.status(200).json(response);
+    } catch (error) {
+        console.log(error.message);
+    }
+}
 
 // export const saveProduct = (req, res)=>{
 //     if(req.files === null) return res.status(400).json({msg: "No File Uploaded"});
